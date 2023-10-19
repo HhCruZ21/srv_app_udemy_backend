@@ -16,7 +16,17 @@ const routes = require('./routes/index')
 
 // do the project using local mongoDB. Learn how to bring a hosted mongoDB into this later.
 const mongoURI = `${Config.DB_HOST}`
-mongoose.connect(mongoURI)
+
+async function connect () {
+  try {
+    await mongoose.connect(mongoURI)
+    console.log('Connected to MongoDB')
+  } catch (error) {
+    console.error(error)
+  }
+}
+
+connect()
 
 // PARSING
 app.use(bodyParser.json())

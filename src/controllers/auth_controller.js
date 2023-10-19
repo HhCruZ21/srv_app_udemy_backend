@@ -1,8 +1,14 @@
 // const { authRepository } = require('../repository/index')
 
 const authController = {
-  async test (req, res, next) {
-    res.json({ ok: 'yes' })
+  async register (req, res, next) {
+    try {
+      const { email, password } = req.body
+      console.log(`Email ${email} and password ${password}`)
+      // const user = await authRepository.registerUser(email, password)
+    } catch (error) {
+      console.error(error.message)
+    }
   }
 }
 

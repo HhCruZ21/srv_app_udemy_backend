@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-const { emailValidator } = require('../validations/validator')
+const { emailValidator } = require('../middleware/validations/validator')
 const { nameMaxLength } = require('../constants/constants')
 require('dotenv').config()
 
